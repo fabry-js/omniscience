@@ -8,15 +8,23 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
-  IonInput
+  IonLabel,
+  IonList,
+  IonItem
 } from '@ionic/react';
-import React from 'react';
+import React, { Component } from 'react';
 import './Tab1.css';
 
- function Tab1() {
-  return (
-    <IonPage>
+class Tab1 extends Component {
+  constructor(props){
+      super(props);
+    }
+
+  render(){
+    return (
       
+      <IonPage>
+
       <IonHeader>
         <IonToolbar>
           <IonTitle>Problemi</IonTitle>
@@ -24,24 +32,47 @@ import './Tab1.css';
       </IonHeader>
 
       <IonContent>
-        
-        <IonCard>
-          
-          <IonCardHeader>
-            <IonCardTitle>Scrivi qui il problema della materia: undefined</IonCardTitle>
-          </IonCardHeader>
 
+        <IonCard>
+          <IonCardHeader>
+            <IonCardTitle>Seleziona una materia: </IonCardTitle>
+          </IonCardHeader>
           <IonCardContent>
-            <IonInput placeholder="Scrivi qui...">
+            <IonList>
+              <IonItem routerLink="/tab1/matematica">
+                <IonLabel>
+                  <h2>Matematica</h2>
+                </IonLabel>
+              </IonItem>
               
-            </IonInput>
+              <IonItem routerLink="/tab1/fisica">
+                <IonLabel>
+                  <h2>Fisica</h2>
+                </IonLabel>
+              </IonItem>
+              
+              <IonItem routerLink="/tab1/inglese">
+                <IonLabel>
+                  <h2>Inglese</h2>
+                </IonLabel>
+              </IonItem>
+              
+              <IonItem routerLink="/tab1/latino">
+                <IonLabel>
+                  <h2>Latino</h2>
+                </IonLabel>
+              </IonItem>
+            </IonList>
           </IonCardContent>
-        
         </IonCard>
+
+        
 
       </IonContent>
     </IonPage>
-  );
-};
+    );
+  }
+}
+;
 
 export default Tab1;
